@@ -1,0 +1,16 @@
+# Python environment files
+__pycache__/
+*.pyc
+
+# Saved Model/Vectorizer Files (Use these if you don't want to track binary models)
+*.pkl
+*.joblib
+
+# Streamlit Cache
+.streamlit/
+
+# Data files (Spam.csv is small, but for big data, you'd ignore this too)
+# spam.csv 
+
+# Plot image (usually included, but ignore if regenerated on every run)
+# ham_spam_distribution.png
