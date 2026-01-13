@@ -1,16 +1,30 @@
-# Python environment files
+# --- Python & Cache (Always ignore) ---
 __pycache__/
 *.pyc
 
-# Saved Model/Vectorizer Files (Use these if you don't want to track binary models)
-*.pkl
-*.joblib
+# --- Environments (CRITICAL: Don't upload your brain) ---
+env/
+venv/
+.venv/
+zeno_ai/
 
-# Streamlit Cache
+# --- IDE Settings (Personal preferences) ---
+.vscode/
+.idea/
+
+# --- System Junk (From your Pen Drive/Windows) ---
+Thumbs.db
+.DS_Store
+
+# --- Models & Data ---
+# (I commented these out so your models DO get uploaded. 
+# Un-comment them only if the files are larger than 100MB)
+# *.pkl
+# *.joblib
+
+# --- Streamlit ---
 .streamlit/
 
-# Data files (Spam.csv is small, but for big data, you'd ignore this too)
-# spam.csv 
-
-# Plot image (usually included, but ignore if regenerated on every run)
-# ham_spam_distribution.png
+# --- Large Data ---
+# (Keep spam.csv tracked since it is small)
+# spam.csv
