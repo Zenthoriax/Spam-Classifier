@@ -14,5 +14,8 @@ COPY . .
 # 5. The Command: How to run the app?
 # (If it's a simple script:)
 
+# This tells Docker Desktop that the container listens on port 8501
+EXPOSE 8501
+
 # (OR: If it's a Streamlit web app, comment out the line above and use this instead:)
 CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
