@@ -1,21 +1,26 @@
-# 1. The Base Image: Start with a lightweight Python version
-FROM python:3.9-slim
+FROM python:3.10-slim
 
-# 2. The Setup: Create a working directory inside the container
+ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 
-# 3. The Dependencies: Copy requirements first (for caching speed)
+# System dependencies for matplotlib + seaborn
+RUN apt-get update && apt-get install -y \
+    libglib2.0-0 \
+    libsm6 \
+    libxext6 \
+    libxrender-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy and install Python dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# 4. The Code: Copy the rest of your app code
+# Copy project files
 COPY . .
 
-# 5. The Command: How to run the app?
-# (If it's a simple script:)
-
-# This tells Docker Desktop that the container listens on port 8501
+# Streamlit port
 EXPOSE 8501
 
-# (OR: If it's a Streamlit web app, comment out the line above and use this instead:)
+# Run Streamlit
 CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+
