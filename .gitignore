@@ -1,0 +1,30 @@
+# --- Python & Cache (Always ignore) ---
+__pycache__/
+*.pyc
+
+# --- Environments (CRITICAL: Don't upload your brain) ---
+env/
+venv/
+.venv/
+zeno_ai/
+
+# --- IDE Settings (Personal preferences) ---
+.vscode/
+.idea/
+
+# --- System Junk (From your Pen Drive/Windows) ---
+Thumbs.db
+.DS_Store
+
+# --- Models & Data ---
+# (I commented these out so your models DO get uploaded. 
+# Un-comment them only if the files are larger than 100MB)
+# *.pkl
+# *.joblib
+
+# --- Streamlit ---
+.streamlit/
+
+# --- Large Data ---
+# (Keep spam.csv tracked since it is small)
+# spam.csv
